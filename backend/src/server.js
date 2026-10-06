@@ -1,0 +1,2 @@
+import http from 'http';import { Server } from 'socket.io';import app from './app.js';import {connectDb} from './config/db.js';import {env} from './config/env.js';import {configureSockets} from './sockets/index.js';
+await connectDb();const server=http.createServer(app);const io=new Server(server,{cors:{origin:env.origins.includes('*')?'*':env.origins,credentials:true},transports:['websocket','polling'],pingInterval:25000,pingTimeout:20000});configureSockets(io);server.listen(env.port,()=>console.log(`API + Socket.IO listening on http://localhost:${env.port}`));

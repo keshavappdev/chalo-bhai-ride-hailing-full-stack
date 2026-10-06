@@ -1,0 +1,2 @@
+import {connectDb} from '../config/db.js';import mongoose from 'mongoose';import User from '../models/User.js';import Driver from '../models/Driver.js';import Vehicle from '../models/Vehicle.js';import Ride from '../models/Ride.js';import Location from '../models/Location.js';import Notification from '../models/Notification.js';
+await connectDb();for(const M of [User,Driver,Vehicle,Ride,Location,Notification]){await M.syncIndexes();console.log('Synced indexes:',M.modelName);}await mongoose.disconnect();

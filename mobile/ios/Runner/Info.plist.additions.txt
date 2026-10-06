@@ -1,0 +1,6 @@
+Add these keys to ios/Runner/Info.plist after running `flutter create .`:
+<key>NSLocationWhenInUseUsageDescription</key><string>Location is used for pickup, driver matching and ride tracking.</string>
+<key>NSLocationAlwaysAndWhenInUseUsageDescription</key><string>Drivers share location while an active ride is running.</string>
+<key>UIBackgroundModes</key><array><string>location</string></array>
+
+In ios/Runner/AppDelegate.swift configure GMSServices.provideAPIKey("YOUR_IOS_GOOGLE_MAPS_KEY") following google_maps_flutter setup.

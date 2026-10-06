@@ -1,0 +1,1 @@
+import{io}from'socket.io-client';export const createAdminSocket=()=>io(import.meta.env.VITE_SOCKET_URL||'http://localhost:4000',{auth:{token:localStorage.getItem('adminToken')},transports:['websocket'],autoConnect:true,reconnection:true});

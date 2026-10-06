@@ -1,0 +1,2 @@
+import { Router } from 'express';import { registerUser,registerDriver,login,me,registerUserSchema,registerDriverSchema,loginSchema } from '../controllers/authController.js';import { validate } from '../middleware/validate.js';import { auth } from '../middleware/auth.js';
+const r=Router();r.post('/register/user',validate(registerUserSchema),registerUser);r.post('/register/driver',validate(registerDriverSchema),registerDriver);r.post('/login',validate(loginSchema),login);r.get('/me',auth,me);export default r;
