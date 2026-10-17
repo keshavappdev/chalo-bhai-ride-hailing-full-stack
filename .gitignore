@@ -1,27 +1,28 @@
-# secrets
+# Secrets and local configuration
 .env
 .env.*
 !.env.example
-**/google-services.json
-**/GoogleService-Info.plist
-**/firebase_options.dart
-
-# Node
+**/.env
+**/.env.*
+!**/.env.example
+*.pem
+*.p12
+*.pfx
+*.key
+*serviceAccount*.json
+*service-account*.json
+*firebase-adminsdk*.json
+credentials.json
+secrets.json
+# Dependencies and build outputs
+node_modules/
 **/node_modules/
+dist/
 **/dist/
-**/.vite/
+build/
+coverage/
+*.log
 npm-debug.log*
-
-# Flutter
-mobile/.dart_tool/
-mobile/.packages
-mobile/build/
-mobile/.flutter-plugins*
-mobile/ios/Pods/
-mobile/ios/.symlinks/
-mobile/android/.gradle/
-
-# IDE/OS
 .DS_Store
-.idea/
 .vscode/
+.idea/
